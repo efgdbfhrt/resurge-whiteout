@@ -40,7 +40,7 @@ The release also has **`T7InternalWS.dll`**, the Whiteout runtime, as a separate
 ## Requirements
 
 - Windows 10/11, 64-bit
-- A legitimate copy of **Call of Duty: Black Ops III** (Microsoft Store)
+- Call of Duty: Black Ops III game
 - `Resurge.dll` from the original Resurge launcher
 
 ## Legal
