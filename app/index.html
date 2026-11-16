@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resurge MS Client Installer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="window-titlebar">
+        <div class="window-titlebar-left">
+            <div class="window-app-icon" aria-hidden="true"></div>
+            <div class="window-titletext">Resurge MS Client Installer</div>
+        </div>
+        <div class="window-titlebar-right">
+            <button id="theme-toggle-btn" class="theme-btn" type="button">Light Mode</button>
+            <button id="window-minimize-btn" class="window-control-btn" type="button" aria-label="Minimize">&#8211;</button>
+            <button id="window-maximize-btn" class="window-control-btn" type="button" aria-label="Maximize">&#9633;</button>
+            <button id="window-close-btn" class="window-control-btn window-close-btn" type="button" aria-label="Close">&#215;</button>
+        </div>
+    </div>
+    <div class="container">
+        <header>
+            <img src="assets/logo.png" alt="Resurge Installer Logo" class="main-logo">
+        </header>
+
+        <main>
+            <section class="setup-section">
+                <h2>SETUP</h2>
+
+                <div class="game-path-section">
+                    <label for="game-path">Game Installation Path:</label>
+                    <div class="path-input-group">
+                        <input type="text" id="game-path" readonly placeholder="No folder selected">
+                        <button id="select-folder-btn" class="btn btn-primary">Select Game Folder</button>
+                    </div>
+                    <small>Select the folder containing blackops3.exe</small>
+                </div>
+
+                <div class="button-group">
+                    <button id="install-mod-btn" class="btn btn-success" disabled>Install Resurge Client + EZZ Boiii
+                        Client</button>
+                    <button id="install-resurge-only-btn" class="btn btn-primary" disabled>Install Only Resurge
+                        Client</button>
+                </div>
+            </section>
+
+            <section class="launch-section">
+                <h2>OPTIONS</h2>
+
+                <div class="launch-grid">
+                    <div class="launch-group">
+                        <h3>MS STORE SERVERS</h3>
+                        <button id="run-ms-store-btn" class="btn btn-launch" disabled>Launch Resurge</button>
+                    </div>
+
+                    <div class="launch-group">
+                        <h3>WGS CACHE</h3>
+                        <button id="clean-wgs-cache-btn" class="btn btn-warning" disabled>Clean WGS Cache
+                            Folder</button>
+                    </div>
+
+                    <div class="launch-group">
+                        <h3>EXPLORER</h3>
+                        <button id="show-game-folder-btn" class="btn btn-launch" disabled>Show Game Folder</button>
+                    </div>
+
+                    <div class="launch-group">
+                        <h3>RESURGE CONFIG</h3>
+                        <button id="open-resurge-settings-btn" class="btn btn-settings" disabled>Resurge Client
+                            Settings</button>
+                    </div>
+
+                    <div class="launch-group">
+                        <h3>MODS MANAGER</h3>
+                        <button id="open-mods-manager-btn" class="btn btn-modsmanager" disabled>Mods Manager</button>
+                    </div>
+
+                    <div class="launch-group">
+                        <h3>STEAM WORKSHOP</h3>
+                        <button id="import-steam-workshop-btn" class="btn btn-steamimport" disabled>Import Steam Workshop Mods/Maps</button>
+                    </div>
+
+                    <div class="launch-group">
+                        <h3>GSC INJECTOR</h3>
+                        <button id="load-gsc-injector-btn" class="btn btn-gsc">GSC Injector</button>
+                    </div>
+
+                    <div class="launch-group">
+                        <h3>XBOX REPAIR</h3>
+                        <button id="repair-gaming-services-btn" class="btn btn-gamingservices">Repair Gaming Services</button>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="troubleshoot-section">
+                <h2>SUPPORT</h2>
+                <div class="button-group">
+                    <button id="download-downgrade-btn" class="btn btn-gamefiles1">Download Game Files</button>
+                    <button id="discord-btn" class="btn btn-info">Open a Ticket on our Discord</button>
+                    <button id="other-clients-btn" class="btn btn-discord">Other Clients - Black Ops II MS Client
+                        Available on Discord</button>
+                </div>
+            </section>
+        </main>
+
+        <div id="resurge-settings-modal" class="modal" aria-hidden="true">
+            <div class="modal-content resurge-settings-modal">
+                <span id="close-resurge-settings-btn" class="close" aria-label="Close settings">&times;</span>
+                <h2>Resurge Client Settings</h2>
+                <p>Edit the options below and save them back to <span id="resurge-ini-path" class="ini-path"></span></p>
+
+                <form id="resurge-settings-form">
+                    <div class="settings-grid">
+                        <div class="settings-group">
+                            <h3>System</h3>
+                            <label class="setting-row">
+                                <span>Force Xbox Live</span>
+                                <select id="force-xbox-live">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </label>
+                            <label class="setting-row">
+                                <span>Force Disable Steam</span>
+                                <select id="force-disable-steam">
+                                    <option value="0">Leave API enabled</option>
+                                    <option value="1">Disable Steam API</option>
+                                    <option value="2">Disable API and taskkill steam.exe on startup</option>
+                                </select>
+                            </label>
+                            <label class="setting-row">
+                                <span>Enable Developer Console</span>
+                                <select id="enable-console">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>DLC</h3>
+                            <label class="setting-row">
+                                <span>Enable Unlock All</span>
+                                <select id="enable-unlock-all">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </label>
+                            <label class="setting-row">
+                                <span>Spoof DLC Map Packs</span>
+                                <select id="spoof-dlc-mappacks">
+                                    <option value="0">Base game only</option>
+                                    <option value="1">All DLCs</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Security</h3>
+                            <label class="setting-row">
+                                <span>Security Prefix</span>
+                                <select id="security-prefix">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </label>
+                            <label class="setting-row">
+                                <span>Security Hooks</span>
+                                <select id="security-hooks">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Hacks</h3>
+                            <label class="setting-row">
+                                <span>GobbleGum Hack</span>
+                                <select id="gobblegum-hack">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </label>
+                            <label class="setting-row">
+                                <span>GobbleGum Value</span>
+                                <input id="gobblegum-value" type="number" min="0" step="1">
+                            </label>
+                            <label class="setting-row">
+                                <span>Cryptokeys Hack</span>
+                                <select id="cryptokeys-hack">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </label>
+                            <label class="setting-row">
+                                <span>Cryptokeys Value</span>
+                                <input id="cryptokeys-value" type="number" min="0" step="1">
+                            </label>
+                            <label class="setting-row">
+                                <span>Liquid Divinium Hack</span>
+                                <select id="liquid-divinium-hack">
+                                    <option value="0">Disabled</option>
+                                    <option value="1">Enabled</option>
+                                </select>
+                            </label>
+                            <label class="setting-row">
+                                <span>Liquid Divinium Value</span>
+                                <input id="liquid-divinium-value" type="number" min="0" step="1">
+                            </label>
+                        </div>
+
+                        <div class="settings-group">
+                            <h3>Controller</h3>
+                            <label class="setting-row">
+                                <span>Controller Icons</span>
+                                <select id="controller-icons">
+                                    <option value="0">Auto</option>
+                                    <option value="1">Force Xbox icons</option>
+                                    <option value="2">Force PlayStation icons</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" id="cancel-resurge-settings-btn" class="btn btn-primary">Cancel</button>
+                        <button type="submit" id="save-resurge-settings-btn" class="btn btn-success">Save
+                            Settings</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="mods-manager-modal" class="modal" aria-hidden="true">
+            <div class="modal-content mods-manager-modal">
+                <span id="close-mods-manager-btn" class="close" aria-label="Close mods manager">&times;</span>
+                <h2>Mods Manager</h2>
+                <p>Manage folders inside <span id="mods-manager-root-path" class="ini-path"></span></p>
+
+                <div class="modal-toolbar">
+                    <button type="button" id="refresh-mods-manager-btn" class="btn btn-launch">Refresh List</button>
+                </div>
+
+                <div id="mods-manager-empty" class="mods-empty-state" hidden>No mods or maps were found.</div>
+                <div id="mods-manager-content" class="mods-list"></div>
+            </div>
+        </div>
+
+        <div id="gsc-injector-modal" class="modal" aria-hidden="true">
+            <div class="modal-content gsc-injector-modal">
+                <span id="close-gsc-injector-btn" class="close" aria-label="Close GSC Injector">&times;</span>
+                <h2>GSC Injector</h2>
+                <p>Select a script to inject into memory. Place scripts in: <span id="gsc-dir-path" class="ini-path"></span></p>
+
+                <div class="modal-toolbar">
+                    <button type="button" id="refresh-gsc-list-btn" class="btn btn-launch">Refresh List</button>
+                </div>
+
+                <div id="gsc-list-empty" class="mods-empty-state" hidden>No compiled .gsc files found.</div>
+                <div id="gsc-list-content" class="gsc-list"></div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="status-bar">
+                <span id="status-text">Ready</span>
+            </div>
+        </footer>
+        <div id="webtorrent-modal" class="modal" aria-hidden="true">
+            <div class="modal-content webtorrent-modal">
+                <span id="close-webtorrent-btn" class="close" aria-label="Close">&times;</span>
+                <h2>Download Game Files</h2>
+                <div id="webtorrent-selection">
+                    <p style="margin-bottom: 15px; color: var(--text-muted);">Select which version you want to download:</p>
+                    <div class="button-group">
+                        <button id="download-unpacked-btn" class="btn btn-gamefiles2">Option 1: Unpacked (Ready to Play)</button>
+                        <button id="download-packed-btn" class="btn btn-gamefiles3">Option 2: Packed (Requires Unpacking)</button>
+                    </div>
+                </div>
+                <div id="webtorrent-progress-container" style="display: none;">
+                    <h3 id="webtorrent-status" style="margin-bottom: 10px;">Starting download...</h3>
+                    <div class="progress-bar-bg" style="width: 100%; height: 20px; background-color: var(--bg-tertiary); border-radius: 10px; overflow: hidden; margin-bottom: 10px;">
+                        <div id="webtorrent-progress-bar" class="progress-bar-fill" style="width: 0%; height: 100%; background-color: var(--info-bg1); transition: width 0.3s;"></div>
+                    </div>
+                    <div class="webtorrent-stats" style="display: flex; justify-content: space-between; font-size: 0.9em; color: var(--text-muted);">
+                        <span id="webtorrent-speed">0 MB/s</span>
+                        <span id="webtorrent-time">Calculating...</span>
+                        <span id="webtorrent-percentage">0%</span>
+                    </div>
+                    <p id="webtorrent-log" style="font-size: 0.8em; color: var(--text-muted); margin-top: 10px; text-align: center;">Looking for peers...</p>
+                    <div class="button-group" style="margin-top: 15px; justify-content: center;">
+                        <button id="webtorrent-pause-btn" class="btn btn-pause">Pause</button>
+                        <button id="webtorrent-cancel-btn" class="btn btn-cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

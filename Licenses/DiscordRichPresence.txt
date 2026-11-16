@@ -1,0 +1,1 @@
+DiscordRichPresence 1.6.1.70 | Lachee | MIT | https://github.com/Lachee/discord-rpc-csharp

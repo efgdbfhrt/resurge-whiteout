@@ -1,0 +1,80 @@
+{
+  "name": "resurge",
+  "version": "2.0.0",
+  "description": "Resurge Client Installer and Manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never"
+  },
+  "keywords": [
+    "electron",
+    "boiii",
+    "cod",
+    "black ops 3",
+    "uwp"
+  ],
+  "author": "Resurge Team",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "ajv-keywords": "3.5.2",
+    "electron": "^27.3.11",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.boiii.resurge-installer",
+    "productName": "Resurge MS Client Installer",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "boiii assets/**/*",
+      "!README.md",
+      "!INSTALL_GUIDE.md",
+      "!setup.bat",
+      "!start.bat",
+      "!dist/",
+      "!.github/",
+      "!boiii_/"
+    ],
+    "extraResources": [
+      {
+        "from": "boiii",
+        "to": "boiii assets/boiii"
+      },
+      {
+        "from": "BOIII ReImagined",
+        "to": "boiii assets/BOIII ReImagined"
+      },
+      {
+        "from": "ms",
+        "to": "boiii assets/ms"
+      },
+      {
+        "from": "update ms",
+        "to": "boiii assets/update ms"
+      },
+      {
+        "from": "downgrade",
+        "to": "boiii assets/downgrade"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Resurge MS Client Installer"
+    }
+  },
+  "dependencies": {
+    "koffi": "^3.0.2",
+    "webtorrent": "^3.0.14"
+  }
+}

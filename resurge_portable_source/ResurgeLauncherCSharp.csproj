@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>..\app\icon.ico</ApplicationIcon>
+    <Company>Resurge</Company>
+    <Product>Resurge Launcher</Product>
+    <Description>Resurge Whiteout Community Launcher</Description>
+    <FileVersion>2.7.0.0</FileVersion>
+    <InformationalVersion>2.7</InformationalVersion>
+    <AssemblyName>Resurge</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\**\*.png" />
+    <EmbeddedResource Include="Assets\whiteout-public.cfg" LogicalName="Whiteout.PublicServer.cfg" />
+    <EmbeddedResource Include="Assets\WhiteoutGdkRuntime.dll" LogicalName="Whiteout.GdkRuntime" Condition="Exists('Assets\WhiteoutGdkRuntime.dll')" />
+    <EmbeddedResource Include="Assets\gobblegums.tsv" LogicalName="Whiteout.GobbleGums" />
+    <EmbeddedResource Include="Assets\friends.json" LogicalName="Whiteout.Friends" />
+    <EmbeddedResource Include="..\camos\out\*.wcam" LogicalName="Whiteout.Camo.%(Filename)" />
+    <Resource Include="..\camos\out\cards\*.png" Link="Assets\camos\%(Filename)%(Extension)" />
+    <Resource Include="Assets\**\*.gif" />
+    <EmbeddedResource Include="..\app\ms\**\*.*" Link="EmbeddedAssets\ms\%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="..\app\boiii\**\*.*" Link="EmbeddedAssets\boiii\%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="..\app\gsc\**\*.*" Link="EmbeddedAssets\gsc\%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Downgrade\**\*.torrent">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiscordRichPresence" Version="1.6.1.70" />
+    <PackageReference Include="MonoTorrent" Version="3.0.2" />
+  </ItemGroup>
+
+</Project>

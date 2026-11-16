@@ -1,0 +1,57 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Executables
+*.exe
+*.out
+*.app
+
+/.vs
+/x64
+/bin
+/steam
+/sdk
+*/bin/
+
+# vs bloat
+*.iobj
+*.dll.recipe
+*.ipdb
+*.ilog
+*.tlog
+*.log
+
+# Python analysis scripts (contain sensitive filepaths)
+analyze_ghidra.py
+analyze_unlocks_detailed.py
+find_unlock_function.py
+extract_critical_functions.py
+generate_summary.py
+
+# Analysis text files (contain memory addresses and sensitive info)
+analysis/*.txt
+

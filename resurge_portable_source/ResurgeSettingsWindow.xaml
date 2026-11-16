@@ -1,0 +1,137 @@
+<Window x:Class="ResurgeLauncherCSharp.ResurgeSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Resurge Client Settings" Height="650" Width="500"
+        Background="{StaticResource Canvas}" Foreground="{StaticResource Ink}" WindowStartupLocation="CenterOwner">
+    <ScrollViewer>
+        <StackPanel Margin="20" TextBlock.Foreground="White">
+            <TextBlock Text="Resurge Settings" FontSize="24" FontWeight="Bold" Foreground="{StaticResource Accent}" Margin="0,0,0,5"/>
+            <TextBlock Text="Edit resurge.ini configuration directly" Foreground="#aaaaaa" Margin="0,0,0,20"/>
+            
+            <TextBlock Text="System" FontSize="18" FontWeight="Bold" Margin="0,10,0,5"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="Force Xbox Live:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="ForceXboxLiveCombo" Grid.Row="0" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+
+                <TextBlock Text="Force Disable Steam:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="ForceDisableSteamCombo" Grid.Row="1" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Leave API enabled" Tag="0"/>
+                    <ComboBoxItem Content="Disable Steam API" Tag="1"/>
+                    <ComboBoxItem Content="Disable API and kill steam.exe" Tag="2"/>
+                </ComboBox>
+
+                <TextBlock Text="Enable Console:" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="EnableConsoleCombo" Grid.Row="2" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+
+                <TextBlock Text="Controller Icons:" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="ControllerIconsCombo" Grid.Row="3" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Automatic" Tag="0"/>
+                    <ComboBoxItem Content="Xbox" Tag="1"/>
+                    <ComboBoxItem Content="PlayStation" Tag="2"/>
+                </ComboBox>
+
+                <TextBlock Text="Auto Cleanup Files:" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="AutoCleanupCombo" Grid.Row="4" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+            </Grid>
+
+            <!-- DLC -->
+            <TextBlock Text="DLC" FontSize="18" FontWeight="Bold" Margin="0,20,0,5"/>
+            <Grid>
+                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                
+                <TextBlock Text="Enable Unlock All:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="UnlockAllCombo" Grid.Row="0" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+
+                <TextBlock Text="Spoof DLC Map Packs:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="SpoofDlcCombo" Grid.Row="1" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Base game only" Tag="0"/>
+                    <ComboBoxItem Content="All DLCs" Tag="1"/>
+                </ComboBox>
+            </Grid>
+
+            <!-- Security -->
+            <TextBlock Text="Security" FontSize="18" FontWeight="Bold" Margin="0,20,0,5"/>
+            <Grid>
+                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                
+                <TextBlock Text="Security Prefix:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="SecurityPrefixCombo" Grid.Row="0" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+
+                <TextBlock Text="Security Hooks:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="SecurityHooksCombo" Grid.Row="1" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+            </Grid>
+
+            <!-- Hacks -->
+            <TextBlock Text="Hacks" FontSize="18" FontWeight="Bold" Margin="0,20,0,5"/>
+            <Grid>
+                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/><RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/><RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/><RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Text="GobbleGum Hack:" Grid.Row="0" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="GobblegumHackCombo" Grid.Row="0" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+                
+                <TextBlock Text="GobbleGum Value:" Grid.Row="1" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="GobblegumValueText" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="Cryptokeys Hack:" Grid.Row="2" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="CryptokeysHackCombo" Grid.Row="2" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+
+                <TextBlock Text="Cryptokeys Value:" Grid.Row="3" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="CryptokeysValueText" Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+                <TextBlock Text="Liquid Divinium Hack:" Grid.Row="4" Grid.Column="0" Margin="5"/>
+                <ComboBox x:Name="LiquidDiviniumHackCombo" Grid.Row="4" Grid.Column="1" Margin="5">
+                    <ComboBoxItem Content="Disabled" Tag="0"/>
+                    <ComboBoxItem Content="Enabled" Tag="1"/>
+                </ComboBox>
+
+                <TextBlock Text="Liquid Divinium Value:" Grid.Row="5" Grid.Column="0" Margin="5"/>
+                <TextBox x:Name="LiquidDiviniumValueText" Grid.Row="5" Grid.Column="1" Margin="5"/>
+            </Grid>
+
+            <Button Content="Save to resurge.ini" Height="40" Margin="0,30,0,10" Click="SaveButton_Click" Style="{StaticResource Primary}"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

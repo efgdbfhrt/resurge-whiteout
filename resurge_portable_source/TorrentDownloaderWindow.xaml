@@ -1,0 +1,33 @@
+<Window x:Class="ResurgeLauncherCSharp.TorrentDownloaderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Download Game Files" Height="300" Width="600"
+        Background="#121212" WindowStartupLocation="CenterOwner"
+        Closing="Window_Closing">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Game Downloader" FontSize="24" FontWeight="Bold" Foreground="#ff6600"/>
+        <TextBlock Grid.Row="1" Text="Download the base game using BitTorrent." Foreground="#aaaaaa" Margin="0,5,0,20"/>
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,20" HorizontalAlignment="Center">
+            <Button Content="Download Unpacked (120GB)" Width="200" Height="40" Margin="0,0,20,0" Click="DownloadUnpacked_Click" Background="#333" Foreground="White" BorderThickness="0" Cursor="Hand"/>
+            <Button Content="Download Packed (125GB)" Width="200" Height="40" Click="DownloadPacked_Click" Background="#333" Foreground="White" BorderThickness="0" Cursor="Hand"/>
+        </StackPanel>
+
+        <TextBlock x:Name="StatusText" Grid.Row="3" Foreground="White" Text="Ready." Margin="0,0,0,5"/>
+        <ProgressBar x:Name="DownloadProgress" Grid.Row="4" Height="20" Minimum="0" Maximum="100" Margin="0,0,0,10"/>
+        
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <TextBlock x:Name="SpeedText" Foreground="#aaaaaa" Width="150" Text="Speed: 0 MB/s"/>
+            <TextBlock x:Name="PercentText" Foreground="#aaaaaa" Width="100" Text="0.00%"/>
+        </StackPanel>
+    </Grid>
+</Window>
