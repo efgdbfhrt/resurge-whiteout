@@ -16,7 +16,7 @@
 
 ## Download and play
 
-1. Go to [Releases](../../releases/latest) and download **`Resurge Whiteout 2.7 Windows x64.zip`**.
+1. Go to [Releases](../../releases/latest) and download **`Resurge.Whiteout.2.7.Windows.x64.zip`**.
 2. Extract it anywhere and run **`Resurge Whiteout.exe`**.
 3. On first start the launcher looks for your game folder and for `Resurge.dll` (from the original Resurge launcher) by itself. If it can't find them, pick them on the **Play** page.
 4. Press **Play**.
