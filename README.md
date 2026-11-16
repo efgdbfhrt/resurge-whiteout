@@ -45,8 +45,7 @@ The release also has **`T7InternalWS.dll`**, the Whiteout runtime, as a separate
 
 ## Legal
 
-This project does **not** include any game files. Call of Duty: Black Ops III is the property of **Activision Publishing, Inc.** This project is not affiliated with, endorsed by, or connected to Activision, Treyarch, or Microsoft. You need your own legal copy of the game. Use at your own risk: the software is provided as-is, without warranty.
-
+This project does **not** include any game files. Call of Duty: Black Ops III but you can get it in fitgirl or anywhere or use steam version 
 ## Building from source
 
 Requirements: Visual Studio 2026 (C++ desktop workload, v145 toolset) and the .NET 8 SDK.
